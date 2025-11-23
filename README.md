@@ -15,10 +15,89 @@
 
 This is the repository of the [webpack](https://webpack.js.org/) plugin for developing [Nyx Lab](https://github.com/nyxlib/nyx-lab/) addons.
 
-# Build instructions
+# Installing nyx-webpack-plugin
 
 ```bash
-npm install
+npm install --dev https://github.com/nyxlib/nyx-webpack-plugin.git
+```
+
+# Using nyx-webpack-plugin
+
+```
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+const ADDON_NAME = 'addon-name';
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+import {VueLoaderPlugin} from 'vue-loader';
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+import NyxPlugin from 'nyx-webpack-plugin';
+
+import TerserPlugin from 'terser-webpack-plugin';
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+// noinspection JSUnusedGlobalSymbols
+export default {
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+    entry: {
+        'plugin': './src/plugin.js',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                'type': 'asset/resource',
+                'test': /\.(ttf|png|jpg|wasm)$/,
+                'generator': {
+                    'filename': 'assets/[hash][ext]'
+                }
+            }
+        ]
+    },
+    plugins: [
+        new VueLoaderPlugin(),
+        new NyxPlugin(ADDON_NAME),
+    ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                test: /\.js$/,
+                parallel: true,
+                extractComments: false,
+            })
+        ]
+    },
+    performance: {
+        hints: false
+    }
+};
+
+/*--------------------------------------------------------------------------------------------------------------------*/
 ```
 
 # Home page and documentation
