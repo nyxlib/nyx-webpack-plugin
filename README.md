@@ -23,7 +23,7 @@ npm install --dev https://github.com/nyxlib/nyx-webpack-plugin.git
 
 # Using nyx-webpack-plugin
 
-In the poject root directory, create `webpack.config.js`:
+In the project root directory, create `webpack.config.js`:
 ```js
 /*--------------------------------------------------------------------------------------------------------------------*/
 
