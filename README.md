@@ -126,4 +126,4 @@ divine figures, including Hypnos (Sleep) and Thanatos (Death).
 </div>
 
 [License]:https://opensource.org/license/mit/
-[License img]:https://img.shields.io/badge/MIT-blue.svg
+[License img]:https://img.shields.io/badge/License-MIT-blue.svg
