@@ -125,6 +125,5 @@ divine figures, including Hypnos (Sleep) and Thanatos (Death).
     <img src="https://raw.githubusercontent.com/nyxlib/nyx-node/refs/heads/main/docs/img/nyx.png" style="width: 600px;" />
 </div>
 
-
-[License]:https://www.gnu.org/licenses/lgpl-3.0.txt
-[License img]:https://img.shields.io/badge/License-LGPL_3.0_or_later-blue.svg
+[License]:https://opensource.org/license/mit/
+[License img]:https://img.shields.io/badge/MIT-blue.svg
