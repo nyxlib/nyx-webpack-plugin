@@ -41,7 +41,7 @@ export default class IndiWebpackPlugin
         /* OUTPUT                                                                                                     */
         /*------------------------------------------------------------------------------------------------------------*/
 
-        if(typeof compiler.options.output.library === 'undefined') {
+        if(compiler.options.output.library === undefined) {
             compiler.options.output.library = {};
         }
 
@@ -54,7 +54,7 @@ export default class IndiWebpackPlugin
         /* EXTERNALS                                                                                                  */
         /*------------------------------------------------------------------------------------------------------------*/
 
-        if(typeof compiler.options.externals === 'undefined') {
+        if(compiler.options.externals === undefined) {
             compiler.options.externals = {};
         }
 
@@ -73,6 +73,7 @@ export default class IndiWebpackPlugin
         compiler.options.externals['@popperjs/core'] = '__NYX_POPPERJS__';
         compiler.options.externals['vuedraggable'] = '__NYX_DRAGGABLE__';
         compiler.options.externals['chart.js/auto'] = '__NYX_CHARTJS__';
+        compiler.options.externals['echarts'] = '__NYX_ECHARTS__';
         compiler.options.externals['uuid'] = '__NYX_UUID__';
 
         compiler.options.externals['d3'] = '__NYX_D3__';
@@ -84,7 +85,7 @@ export default class IndiWebpackPlugin
         /* ALIASES                                                                                                    */
         /*------------------------------------------------------------------------------------------------------------*/
 
-        if(typeof compiler.options.resolve.alias === 'undefined') {
+        if(compiler.options.resolve.alias === undefined) {
             compiler.options.resolve.alias = {};
         }
 
