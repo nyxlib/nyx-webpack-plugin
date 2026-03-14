@@ -67,11 +67,9 @@ export default class IndiWebpackPlugin
         compiler.options.externals['bootstrap'] = '__NYX_BOOTSTRAP__';
         compiler.options.externals['bootstrap/dist/js/bootstrap.esm'] = '__NYX_BOOTSTRAP__';
 
-        compiler.options.externals['flatpickr'] = '__NYX_FLATPICKR__';
-        compiler.options.externals['flatpickr/dist/esm/index'] = '__NYX_FLATPICKR__';
-
         compiler.options.externals['@popperjs/core'] = '__NYX_POPPERJS__';
         compiler.options.externals['vuedraggable'] = '__NYX_DRAGGABLE__';
+        compiler.options.externals['air-datepicker'] = '__NYX_AIR_DATEPICKER__';
         compiler.options.externals['chart.js/auto'] = '__NYX_CHARTJS__';
         compiler.options.externals['echarts'] = '__NYX_ECHARTS__';
         compiler.options.externals['uuid'] = '__NYX_UUID__';
@@ -98,11 +96,9 @@ export default class IndiWebpackPlugin
         compiler.options.resolve.alias['bootstrap'] = false;
         compiler.options.resolve.alias['bootstrap/dist/js/bootstrap.esm'] = false;
 
-        compiler.options.resolve.alias['flatpickr'] = false;
-        compiler.options.resolve.alias['flatpickr/dist/esm/index'] = false;
-
         compiler.options.resolve.alias['@popperjs/core'] = false;
         compiler.options.resolve.alias['vuedraggable'] = false;
+        compiler.options.resolve.alias['air-datepicker'] = false;
         compiler.options.resolve.alias['chart.js/auto'] = false;
         compiler.options.resolve.alias['uuid'] = false;
 
